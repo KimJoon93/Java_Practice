@@ -28,14 +28,14 @@ public class BluetoothSpeaker extends Speaker {
 		System.out.println("JOON투스입니다. \n1번을 누르시면 연결을 시도 하겠습니다." );
 		this.pairing = true;
 	}
-	public void firststate (Boolean pairing , Boolean connection){
-		
-	}
+	
 	
 	public void startpairing (){
+		setPairing(true);
 		System.out.println("페어링을 시작하겠습니다");
 	}
 	public void startconnection(){
+		setConnection(true);
 		System.out.println("연결하겠습니다.");
 	}
 	public void stoppairing(){
