@@ -1,24 +1,20 @@
-/*2017.10.12 ÀüÈ­¹øÈ£Ã¥  */
+/*2017.10.12 ì „í™”ë²ˆí˜¸ë¶€  */
 public class PhoneInfo {
-	String name;
-	String phonenumber;
-	String birthday;
+	private String name;
+	private String phonenumber;
+	private String birthday;
 
 	
 	public PhoneInfo(){
-		System.out.println("¼±ÅÃÇÏ¼¼¿ä...");
-		System.out.println("1.µ¥ÀÌÅÍÀÔ·Â");
-		System.out.println("2.µ¥ÀÌÅÍ°Ë»ö");
-		System.out.println("3.µ¥ÀÌÅÍ»èÁ¦");
-		System.out.println("4.ÇÁ·Î±×·¥ Á¾·á");
-		System.out.print("¼±ÅÃ: ");
+
 	}
 	
-//	public PhoneInfo(String name, String phonenumber, String birthday) {
-//		this.name = name;
-//		this.phonenumber = phonenumber;
-//		this.birthday = birthday;
-//	}
+	public PhoneInfo(String name, String phonenumber, String birthday) {
+		System.out.println("ì…ì„±ì í˜¸ì¶œ!!");
+		this.name = name;
+		this.phonenumber = phonenumber;
+		this.birthday = birthday;
+	}
 
 	public String getName() {
 		return name;
@@ -50,7 +46,7 @@ public class PhoneInfo {
 	}
 
 	public void showPhoneInfo() {
-		System.out.println("ÀÔ·ÂµÈ Á¤º¸ Ãâ·Â...");
+		System.out.println("ì…ë ¥ëœ ì •ë³´ ì¶œë ¥...");
 		System.out.println("name : " + getName());
 		System.out.println("phone : " + getPhonenumber());
 		System.out.println("birth : " + getBirthday());
