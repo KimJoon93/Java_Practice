@@ -15,6 +15,7 @@ public class PhoneInfo {
 		this.phonenumber = phonenumber;
 		this.birthday = birthday;
 	}
+	
 
 	public String getName() {
 		return name;

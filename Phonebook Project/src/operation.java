@@ -10,17 +10,26 @@ public class operation {
 		// PhoneInfo phonebook = null;
 		/* 5개의 전화번호를 만들 공간을 생성 */
 		PhoneInfo[] phonebook = new PhoneInfo[3];
+		PhoneunivInfo[] univphonebook = new PhoneunivInfo[3];
+		PhonecompanyInfo[] companyphonebook = new PhonecompanyInfo[3];
+
 		// phonebook[1] = new PhoneInfo("김준", "0109269", "2월17일");
 		// System.out.println(phonebook[1].getPhonenumber());
 
 		Scanner scan = new Scanner(System.in);
 
 		int count = 0;
+		int univcount = 0;
 		int menu;
+		int infomenu;
 		String name;
 		String num;
 		String birth;
-
+		String major;
+		String phoneNumber;
+		int year;
+		
+		
 		do {
 			showMenu();
 			menu = scan.nextInt();
@@ -30,17 +39,41 @@ public class operation {
 				if (count >= phonebook.length) {
 					System.out.println("용량이 부족합니다!");
 				} else if (phonebook[count] == null) {
-					System.out.print("이름: ");
-					name = scan.next();
-					// phonebook.setName(name);
-					System.out.print("전화번호: ");
-					num = scan.next();
-					// phonebook.setPhonenumber(num);
-					System.out.print("생년월일: ");
-					birth = scan.next();
-					phonebook[count] = new PhoneInfo(name, num, birth);
-					phonebook[count].showPhoneInfo();
-					count++;
+					System.out.println("데이터입력을 시작합니다");
+					infoMenu();
+					infomenu = scan.nextInt();
+					
+					if (infomenu == 1) {
+						System.out.print("이름: ");
+						name = scan.next();
+						// phonebook.setName(name);
+						System.out.print("전화번호: ");
+						num = scan.next();
+						// phonebook.setPhonenumber(num);
+						System.out.print("생년월일: ");
+						birth = scan.next();
+						
+						phonebook[count] = new PhoneInfo(name, num, birth);
+						phonebook[count].showPhoneInfo();
+						count++;	
+					} else if (infomenu == 2) {
+						System.out.print("이름: ");
+						name = scan.next();
+						System.out.print("전화번호: ");
+						phoneNumber = scan.next();
+						System.out.print("전공: ");
+						major = scan.next();
+						System.out.print("학년: ");
+						year = scan.nextInt();
+								
+						univphonebook[count] = new PhoneunivInfo(name, phoneNumber, major, year);
+						univphonebook[count].showPhoneunivInfo();
+						univcount++;
+					}else if (infomenu == 3) {
+						
+					}
+					
+					
 				}
 
 			}
@@ -90,10 +123,10 @@ public class operation {
 							phonebook[i] = null;
 							delete = true;
 							System.out.println("데이터 삭제가 완료되었습니다.");
-							for(int j=i+1; j<phonebook.length; j++) {
-								if(j < phonebook.length) {
-								phonebook[i] = phonebook[j];
-								phonebook[j] = null;
+							for (int j = i + 1; j < phonebook.length; j++) {
+								if (j < phonebook.length) {
+									phonebook[i] = phonebook[j];
+									phonebook[j] = null;
 								}
 							}
 						}
@@ -108,7 +141,7 @@ public class operation {
 			}
 			System.out.println("=========================================");
 		} while (menu != 4);
-
+		
 	}
 
 	static void showMenu() {
@@ -119,6 +152,9 @@ public class operation {
 		System.out.println("4.프로그램 종료");
 		System.out.print("선택: ");
 
+	}
+	static void infoMenu() {
+		System.out.println("1.일반 , 2.대학, 3.회사");
 	}
 
 }
