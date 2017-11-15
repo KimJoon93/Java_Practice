@@ -1,8 +1,8 @@
 /*2017.10.12 전화번호부  */
 public class PhoneInfo {
-	private String name;
-	private String phonenumber;
-	private String birthday;
+	public String name;
+	public String phonenumber;
+	public String birthday;
 
 	
 	public PhoneInfo(){
@@ -10,7 +10,6 @@ public class PhoneInfo {
 	}
 	
 	public PhoneInfo(String name, String phonenumber, String birthday) {
-		System.out.println("셍성자 호출!!");
 		this.name = name;
 		this.phonenumber = phonenumber;
 		this.birthday = birthday;

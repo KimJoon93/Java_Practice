@@ -1,30 +1,10 @@
 
-public class PhonecompanyInfo extends PhoneInfo{
+public class PhonecompanyInfo extends PhoneInfo {
 
-	String name;
-	String phonenumber;
 	String company;
 
 	public PhonecompanyInfo(String name, String phonenumber, String company) {
-		this.name = name;
-		this.phonenumber = phonenumber;
 		this.company = company;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPhonenumber() {
-		return phonenumber;
-	}
-
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
 	}
 
 	public String getCompany() {
