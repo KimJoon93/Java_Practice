@@ -5,6 +5,8 @@ public class PhonecompanyInfo extends PhoneInfo {
 
 	public PhonecompanyInfo(String name, String phonenumber, String company) {
 		this.company = company;
+		this.name = name;
+		this.phonenumber = phonenumber;
 	}
 
 	public String getCompany() {

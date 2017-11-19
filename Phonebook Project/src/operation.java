@@ -36,70 +36,65 @@ public class operation {
 
 			if (menu == 1) {
 
-				
-					System.out.println("데이터입력을 시작합니다...");
-					infoMenu();
-					infomenu = scan.nextInt();
+				System.out.println("데이터입력을 시작합니다...");
+				infoMenu();
+				infomenu = scan.nextInt();
 
-					if (infomenu == 1) {
-						if (count >= phonebook.length) {
-							System.out.println("용량이 부족합니다!");
+				if (infomenu == 1) {
+					if (count >= phonebook.length) {
+						System.out.println("용량이 부족합니다!");
 
-						} else {
-							System.out.print("이름: ");
-							name = scan.next();
-							// phonebook.setName(name);
-							System.out.print("전화번호: ");
-							num = scan.next();
-							// phonebook.setPhonenumber(num);
-							System.out.print("생년월일: ");
-							birth = scan.next();
+					} else {
+						System.out.print("이름: ");
+						name = scan.next();
+						System.out.print("전화번호: ");
+						num = scan.next();
+						System.out.print("생년월일: ");
+						birth = scan.next();
 
-							phonebook[count] = new PhoneInfo(name, num, birth);
-							phonebook[count].showPhoneInfo();
-							count++;
+						phonebook[count] = new PhoneInfo(name, num, birth);
+						phonebook[count].showPhoneInfo();
+						count++;
 
-						}
-					} else if (infomenu == 2) {
-						if (univcount >= univphonebook.length) {
-							System.out.println("용량이 부족합니다!");
+					}
+				} else if (infomenu == 2) {
+					if (univcount >= univphonebook.length) {
+						System.out.println("용량이 부족합니다!");
 
-						} else {
-							System.out.print("이름: ");
-							name = scan.next();
-							System.out.print("전화번호: ");
-							num = scan.next();
-							System.out.print("전공: ");
-							major = scan.next();
-							System.out.print("학년: ");
-							year = scan.nextInt();
+					} else {
+						System.out.print("이름: ");
+						name = scan.next();
+						System.out.print("전화번호: ");
+						num = scan.next();
+						System.out.print("전공: ");
+						major = scan.next();
+						System.out.print("학년: ");
+						year = scan.nextInt();
 
-							univphonebook[univcount] = new PhoneunivInfo(name, num, major, year);
-							univphonebook[univcount].showPhoneunivInfo();
-							univcount++;
+						univphonebook[univcount] = new PhoneunivInfo(name, num, major, year);
+						univphonebook[univcount].showPhoneunivInfo();
+						univcount++;
 
-						}
-
-					} else if (infomenu == 3) {
-						if (compcount >= companyphonebook.length) {
-							System.out.println("용량이 부족합니다!");
-
-						} else {
-							System.out.print("이름: ");
-							name = scan.next();
-							System.out.print("전화번호: ");
-							num = scan.next();
-							System.out.print("회사: ");
-							company = scan.next();
-
-							companyphonebook[compcount] = new PhonecompanyInfo(name, num, company);
-							companyphonebook[compcount].showphonecompanyInfo();
-							compcount++;	
-						}
-						
 					}
 
-				
+				} else if (infomenu == 3) {
+					if (compcount >= companyphonebook.length) {
+						System.out.println("용량이 부족합니다!");
+
+					} else {
+						System.out.print("이름: ");
+						name = scan.next();
+						System.out.print("전화번호: ");
+						num = scan.next();
+						System.out.print("회사: ");
+						company = scan.next();
+
+						companyphonebook[compcount] = new PhonecompanyInfo(name, num, company);
+						companyphonebook[compcount].showphonecompanyInfo();
+						compcount++;
+					}
+
+				}
 
 			}
 
@@ -125,7 +120,7 @@ public class operation {
 							break;
 						}
 					}
-					for (int j = 0; j < phonebook.length; j++) {
+					for (int j = 0; j < univphonebook.length; j++) {
 						if (univphonebook[j] != null && name.equals(univphonebook[j].getName())) {
 							univphonebook[j].showPhoneunivInfo();
 							search = true;
@@ -150,12 +145,13 @@ public class operation {
 
 				boolean delete = false;
 
-				if (phonebook == null) {
+				if (phonebook == null && univphonebook == null && companyphonebook == null) {
 					System.out.println("저장된 연락처가 없습니다.");
 				} else {
 					System.out.println("데이터 삭제를 시작합니다...");
 					System.out.print("이름 :");
 					name = scan.next();
+
 					for (int i = 0; i < phonebook.length; i++) {
 						if (name.equals(phonebook[i].getName())) {
 							phonebook[i] = null;
@@ -168,7 +164,38 @@ public class operation {
 								}
 							}
 						}
+						/* a,b,c를 등록했을때 b를 삭제한다고 가정하면 마지막에 */
+						/* b=phonebook[2].getname?했을때 c=null인데 equals를 써서 nullpoint가 뜨는건지? */
+
+						// else if (name.equals(univphonebook[i].getName())) {
+						//
+						// univphonebook[i] = null;
+						// delete = true;
+						// System.out.println("데이터 삭제가 완료되었습니다.");
+						// for (int j = i + 1; j < univphonebook.length; j++) {
+						// if (j < univphonebook.length) {
+						// univphonebook[i] = univphonebook[j];
+						// univphonebook[j] = null;
+						// }
+						// }
+						//
+						// }
+						// else if(name.equals(companyphonebook[i].getName())) {
+						//
+						// companyphonebook[i] = null;
+						// delete = true;
+						// System.out.println("데이터 삭제가 완료되었습니다.");
+						// for (int j = i + 1; j < companyphonebook.length; j++) {
+						// if (j < companyphonebook.length) {
+						// companyphonebook[i] = companyphonebook[j];
+						// companyphonebook[j] = null;
+						// }
+						// }
+						//
+						// }
+
 					}
+
 					if (!delete) {
 						System.out.println("지우려는 데이터가 존재하지않습니다.");
 					}

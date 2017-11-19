@@ -5,6 +5,8 @@ public class PhoneunivInfo extends PhoneInfo{
 	
 	public PhoneunivInfo(String name, String phonenumber, String major, int year) {
 		System.out.println("생성자 호출!");
+		this.name = name;
+		this.phonenumber= phonenumber;
 		this.major = major;
 		this.year = year;
 	}
