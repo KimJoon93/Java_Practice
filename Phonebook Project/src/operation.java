@@ -178,7 +178,7 @@ public class operation {
 							delete = true;
 							System.out.println("데이터 삭제가 완료되었습니다.");
 							for (int j = i + 1; j < univphonebook.length; j++) {
-								if (j < univphonebook.length) {
+								if (j < univphonebook.length&& univphonebook[j] !=null) {
 									univphonebook[i] = univphonebook[j];
 									univphonebook[j] = null;
 								}
@@ -190,7 +190,7 @@ public class operation {
 							delete = true;
 							System.out.println("데이터 삭제가 완료되었습니다.");
 							for (int j = i + 1; j < companyphonebook.length; j++) {
-								if (j < companyphonebook.length) {
+								if (j < companyphonebook.length&& companyphonebook[j] !=null) {
 									companyphonebook[i] = companyphonebook[j];
 									companyphonebook[j] = null;
 								}
