@@ -153,46 +153,50 @@ public class operation {
 					name = scan.next();
 
 					for (int i = 0; i < phonebook.length; i++) {
-						if (name.equals(phonebook[i].getName())) {
+						if (phonebook[i] != null && name.equals(phonebook[i].getName())) {
 							phonebook[i] = null;
 							delete = true;
 							System.out.println("데이터 삭제가 완료되었습니다.");
 							for (int j = i + 1; j < phonebook.length; j++) {
-								if (j < phonebook.length) {
+								if (j < phonebook.length && phonebook[j] !=null) {
 									phonebook[i] = phonebook[j];
 									phonebook[j] = null;
+									System.out.println(phonebook[i].name);
+									//System.out.println(phonebook[0].name);
+									//System.out.println(phonebook[1].name);
+									//System.out.println(phonebook[2].name);
 								}
 							}
 						}
+
 						/* a,b,c를 등록했을때 b를 삭제한다고 가정하면 마지막에 */
 						/* b=phonebook[2].getname?했을때 c=null인데 equals를 써서 nullpoint가 뜨는건지? */
 
-						// else if (name.equals(univphonebook[i].getName())) {
-						//
-						// univphonebook[i] = null;
-						// delete = true;
-						// System.out.println("데이터 삭제가 완료되었습니다.");
-						// for (int j = i + 1; j < univphonebook.length; j++) {
-						// if (j < univphonebook.length) {
-						// univphonebook[i] = univphonebook[j];
-						// univphonebook[j] = null;
-						// }
-						// }
-						//
-						// }
-						// else if(name.equals(companyphonebook[i].getName())) {
-						//
-						// companyphonebook[i] = null;
-						// delete = true;
-						// System.out.println("데이터 삭제가 완료되었습니다.");
-						// for (int j = i + 1; j < companyphonebook.length; j++) {
-						// if (j < companyphonebook.length) {
-						// companyphonebook[i] = companyphonebook[j];
-						// companyphonebook[j] = null;
-						// }
-						// }
-						//
-						// }
+						else if (univphonebook[i] != null && name.equals(univphonebook[i].getName())) {
+
+							univphonebook[i] = null;
+							delete = true;
+							System.out.println("데이터 삭제가 완료되었습니다.");
+							for (int j = i + 1; j < univphonebook.length; j++) {
+								if (j < univphonebook.length) {
+									univphonebook[i] = univphonebook[j];
+									univphonebook[j] = null;
+								}
+							}
+
+						} else if (companyphonebook[i] != null && name.equals(companyphonebook[i].getName())) {
+
+							companyphonebook[i] = null;
+							delete = true;
+							System.out.println("데이터 삭제가 완료되었습니다.");
+							for (int j = i + 1; j < companyphonebook.length; j++) {
+								if (j < companyphonebook.length) {
+									companyphonebook[i] = companyphonebook[j];
+									companyphonebook[j] = null;
+								}
+							}
+
+						}
 
 					}
 

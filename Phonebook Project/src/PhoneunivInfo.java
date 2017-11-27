@@ -4,9 +4,7 @@ public class PhoneunivInfo extends PhoneInfo{
 	int year;
 	
 	public PhoneunivInfo(String name, String phonenumber, String major, int year) {
-		System.out.println("생성자 호출!");
-		this.name = name;
-		this.phonenumber= phonenumber;
+		super(name,phonenumber);
 		this.major = major;
 		this.year = year;
 	}

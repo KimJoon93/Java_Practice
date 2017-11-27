@@ -3,18 +3,20 @@ public class PhoneInfo {
 	public String name;
 	public String phonenumber;
 	public String birthday;
-
 	
-	public PhoneInfo(){
-
-	}
+	
 	
 	public PhoneInfo(String name, String phonenumber, String birthday) {
 		this.name = name;
 		this.phonenumber = phonenumber;
 		this.birthday = birthday;
 	}
-	
+	/*생일을 추가 하지 않는경우*/
+	public PhoneInfo(String name, String phonenumber) {
+		this.name = name;
+		this.phonenumber = phonenumber;
+		this.birthday = "";
+	}
 
 	public String getName() {
 		return name;
